@@ -60,29 +60,30 @@ public class MailServer{
      */
     private void populateAccounts(){
         // Create demo users
-        register("george", "111");
-        register("donut", "222");
+        register("ryan", "111");
+        register("lasith", "222");
+        register("nithil", "333");
         register("admin", "hardpassword");
 
         // Send e-mails
-        newEmail("george", "donut", "Spam", "Hey there!\nThis is spam!\n");
-        newEmail("george", "admin", "Spam", "Hey there!\nThis is spam!\n");
-        newEmail("george", "george", "Spam", "Hey there!\nThis is spam!\n");
+        newEmail("ryan", "lasith", "Spam", "Hey there!\nThis is spam!\n");
+        newEmail("ryan", "admin", "Spam", "Hey there!\nThis is spam!\n");
+        newEmail("ryan", "nithil", "Spam", "Hey there!\nThis is spam!\n");
 
-        newEmail("donut", "george", "foo", "bar\n");
-        newEmail("donut", "george", "baz", "fizz\n");
-        newEmail("donut", "admin", "fuzz", "Lorem ipsum and stuff...\n");
+        newEmail("lasith", "ryan", "foo", "bar\n");
+        newEmail("lasith", "nithil", "baz", "fizz\n");
+        newEmail("lasith", "admin", "fuzz", "Lorem ipsum and stuff...\n");
 
-        newEmail("admin", "donut", "!Important!", "I hope to pass Signals " +
+        newEmail("admin", "lasith", "!Important!", "I hope to pass Signals " +
                 "and Systems this semester!\nI also hope to pass Digital Communications...\nThat's all folks!\n" +
-                "Yours sincerely,\nGeorge Vasiliadis 3466");
-        newEmail("admin", "donut", "DO NOT OPEN", "Gotcha!\n:P :P :P :P\n");
+                "Yours sincerely,\n Ryan Perera 4113");
+        newEmail("admin", "nithil", "DO NOT OPEN", "Gotcha!\n:P :P :P :P\n");
         newEmail("admin", "admin", "Passwords", "No passwords in here, lol\n");
 
 
         // Super-useless operation to extinguish some warnings
-        Account dummy = accounts.get("george");
-        if(!dummy.getUsername().equals("george")){
+        Account dummy = accounts.get("ryan");
+        if(!dummy.getUsername().equals("ryan")){
             System.out.println("I hate warnings!");
         }
     }
